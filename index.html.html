@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mukesh Ijjurouthu – B.Tech Portfolio</title>
+<meta name="description" content="Portfolio of Mukesh Ijjurouthu, a first-year B.Tech student: projects, skills and contact details.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap">
+<style>
+:root{
+  --paper:#f3f6fa; --surface:#ffffff; --ink:#14213d; --muted:#4a5a78;
+  --grid:#dbe4f0; --accent:#2457f5; --accent-ink:#ffffff; --mark:#ffd23f;
+  --display:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0f1729;--surface:#17213a;--ink:#e8eefc;--muted:#a3b2d0;--grid:#1f2c4a;--accent:#7da2ff;--accent-ink:#0f1729;--mark:#ffd23f;color-scheme:dark}
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;font:1rem/1.65 var(--body);color:var(--ink);background:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:32px 32px}
+img,svg{max-width:100%}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--ink);color:var(--paper);padding:.6rem 1rem;border-radius:6px;z-index:20}
+.skip:focus{top:1rem}
+.wrap{width:min(100% - 2.5rem,62rem);margin-inline:auto}
+header.bar{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:2px solid var(--ink);padding-top:env(safe-area-inset-top,0px)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:3.5rem;flex-wrap:wrap}
+.logo{font:700 1.15rem var(--display);color:var(--ink);text-decoration:none}
+nav ul{display:flex;gap:1.1rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;font-weight:600;padding:.4rem 0;border-bottom:3px solid transparent}
+nav a:hover{border-bottom-color:var(--mark)}
+section{padding:4rem 0}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0 0 1rem}
+h1{font-size:clamp(2.3rem,7.5vw,4.6rem);font-weight:700;letter-spacing:-.02em;max-width:15ch}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);display:inline-block;background:linear-gradient(transparent 62%,var(--mark) 62%)}
+h3{font-size:1.3rem}
+.hero{padding:4.5rem 0 3.5rem}
+.hero .grid{display:grid;gap:2.5rem;align-items:center}
+.lead{font-size:1.2rem;max-width:36rem;color:var(--muted)}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+.btn{display:inline-block;padding:.8rem 1.3rem;border:2px solid var(--ink);border-radius:8px;font-weight:700;text-decoration:none;color:var(--ink);background:var(--surface);box-shadow:4px 4px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.plot{background:var(--surface);border:2px solid var(--ink);border-radius:10px;padding:1rem}
+.plot figcaption{font-size:.9rem;color:var(--muted);margin-top:.5rem}
+.plot path.line{stroke-dasharray:600;stroke-dashoffset:600;animation:draw 1.6s ease-out .3s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.cards{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+.card{background:var(--surface);border:2px solid var(--ink);border-radius:10px;padding:1.3rem;display:flex;flex-direction:column}
+.card p{margin:.2rem 0 1rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0;margin:auto 0 1rem}
+.tags li{border:1.5px solid var(--ink);border-radius:999px;padding:.1rem .7rem;font-size:.85rem}
+.card .links{display:flex;gap:1rem;font-weight:600}
+.skills{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+.skills div{background:var(--surface);border:2px solid var(--ink);border-radius:10px;padding:1.1rem}
+.skills h3{font-size:1.05rem;margin-bottom:.5rem}
+.skills ul{margin:0;padding-left:1.1rem}
+.timeline{list-style:none;margin:0;padding:0 0 0 1.4rem;border-left:3px solid var(--ink)}
+.timeline li{position:relative;padding:0 0 1.6rem 1rem}
+.timeline li::before{content:"";position:absolute;left:-2.05rem;top:.45rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--mark);border:2px solid var(--ink)}
+.timeline time{font-weight:700;color:var(--accent)}
+.contact-list{list-style:none;padding:0;margin:1.2rem 0 0;display:grid;gap:.6rem}
+.contact-list a{font-weight:600}
+footer{border-top:2px solid var(--ink);padding:1.5rem 0 calc(1.5rem + env(safe-area-inset-bottom,0px));color:var(--muted);background:var(--paper)}
+@media (min-width:52rem){.hero .grid{grid-template-columns:1.25fr 1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.plot path.line{animation:none;stroke-dashoffset:0}.btn{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#top">Mukesh Ijjurouthu</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap grid">
+      <div>
+        <h1>First-year engineer, building one project at a time.</h1>
+        <p class="lead">I’m a B.Tech student in Computer Science learning to code, design and ship small tools that solve real problems.</p>
+        <div class="btns">
+          <a class="btn primary" href="#projects">See my projects</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <figure class="plot" aria-label="Chart of my skills growing over my first year">
+        <svg viewBox="0 0 300 180" role="img" aria-labelledby="plot-t">
+          <title id="plot-t">A line rising from left to right, showing skills growing over time</title>
+          <g stroke="currentColor" stroke-width="2" fill="none" style="color:var(--ink)">
+            <path d="M30 10V150H290"/>
+          </g>
+          <path class="line" d="M30 140 C80 135 100 110 140 95 S210 50 285 25" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="285" cy="25" r="6" fill="var(--mark)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="30" y="170" font-size="11" fill="var(--muted)">Semester 1</text>
+          <text x="215" y="170" font-size="11" fill="var(--muted)">Semester 2</text>
+        </svg>
+        <figcaption>Still learning, and shipping while I do.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About me</h2>
+      <p style="max-width:42rem">Hi, I’m <strong>Mukesh Ijjurouthu</strong>, a first-year B.Tech student at <strong>Your College</strong>. I enjoy turning ideas into working programs, and I’m exploring web development, problem solving and electronics. Outside class I take part in coding clubs and keep a notebook of things I want to build next.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div><h3>Programming</h3><ul><li>C and Python (basics)</li><li>Java (learning)</li><li>Problem solving</li></ul></div>
+        <div><h3>Web</h3><ul><li>HTML and CSS</li><li>JavaScript (beginner)</li><li>Responsive layouts</li></ul></div>
+        <div><h3>Tools</h3><ul><li>Git and GitHub</li><li>VS Code</li><li>Linux command line</li></ul></div>
+        <div><h3>Soft skills</h3><ul><li>Teamwork</li><li>Clear writing</li><li>Fast learner</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Study Planner</h3>
+          <p>A simple web app to plan weekly study time and tick off finished tasks.</p>
+          <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <div class="links"><a href="#">Live demo</a><a href="#">Source code</a></div>
+        </article>
+        <article class="card">
+          <h3>Number Guessing Game</h3>
+          <p>A command-line game in Python with difficulty levels and a high-score file.</p>
+          <ul class="tags" aria-label="Technologies"><li>Python</li><li>File I/O</li></ul>
+          <div class="links"><a href="#">Source code</a></div>
+        </article>
+        <article class="card">
+          <h3>Smart Plant Monitor</h3>
+          <p>An Arduino circuit that reads soil moisture and lights an LED when the plant needs water.</p>
+          <ul class="tags" aria-label="Technologies"><li>Arduino</li><li>C++</li><li>Sensors</li></ul>
+          <div class="links"><a href="#">Project notes</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <ol class="timeline">
+        <li><time>2026 – present</time><h3>B.Tech, Computer Science</h3><p>Your College, City. First year, current CGPA: add yours.</p></li>
+        <li><time>2024 – 2026</time><h3>Higher secondary (Class 12)</h3><p>Your School. Physics, Chemistry, Mathematics.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p style="max-width:40rem">Have an idea, an internship, or a team project? Send me a message and I’ll reply within two days.</p>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:ijjurouthumukesh@gmail.com">ijjurouthumukesh@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/mukeshijjurouthu">github.com/mukeshijjurouthu</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/mukesh-i-84a611451/">linkedin.com/in/mukesh-i-84a611451</a></li>
+      </ul>
+      <div class="btns"><a class="btn primary" href="mailto:ijjurouthumukesh@gmail.com">Email me</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> Mukesh Ijjurouthu. Designed and built by me with HTML and CSS.</div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
